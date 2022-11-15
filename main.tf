@@ -17,7 +17,7 @@ locals {
   html_template_file = "${path.module}/${var.html_template_file}"
 
   # see https://developer.hashicorp.com/terraform/language/functions/templatefile
-  html_object = templatefile(var.html_template_file, {
+  html_object = templatefile(local.html_template_file, {
     region = var.bucket_prefix
   })
 }
